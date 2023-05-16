@@ -5,6 +5,7 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
 // The `/api/products` endpoint
 
 // get all products
+//THIS RETURNS AN ERROR
 router.get('/', (req, res) => {
   Product.findAll({
     include: [Category, Tag]
@@ -18,6 +19,7 @@ router.get('/', (req, res) => {
 });
 
 // get one product
+//THIS RETURNS AN ERROR
 router.get('/:id', (req, res) => {
   Product.findOne({
     where: {
@@ -48,6 +50,8 @@ router.post('/', (req, res) => {
       tagIds: [1, 2, 3, 4]
     }
   */
+
+    //THIS RETURNS AN ERROR (code was provided)
   Product.create(req.body)
     .then((product) => {
       // if there's product tags, we need to create pairings to bulk create in the ProductTag model
@@ -71,6 +75,7 @@ router.post('/', (req, res) => {
 });
 
 // update product
+//THIS RETURNS AN ERROR (code was provided)
 router.put('/:id', (req, res) => {
   // update product data
   Product.update(req.body, {
@@ -112,6 +117,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
+//THIS RETURNS 0
 router.delete('/:id', (req, res) => {
   // delete one product by its `id` value
   Product.destroy({

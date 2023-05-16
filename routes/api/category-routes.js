@@ -3,6 +3,7 @@ const { Category, Product } = require('../../models');
 
 // The `/api/categories` endpoint
 
+//THIS RETURNS AN ERROR
 router.get('/', (req, res) => {
   Category.findAll({
     include: [Product]
@@ -15,6 +16,7 @@ router.get('/', (req, res) => {
   // be sure to include its associated Products
 });
 
+//THIS RETURNS AN ERROR
 router.get('/:id', (req, res) => {
   Category.findOne({
     where: {
@@ -31,6 +33,7 @@ router.get('/:id', (req, res) => {
   // be sure to include its associated Products
 });
 
+//THIS WORKS
 router.post('/', (req, res) => {
   Category.create(req.body)
     .then((responce) => {
@@ -40,6 +43,7 @@ router.post('/', (req, res) => {
   // create a new category
 });
 
+//THIS RETURNS AN ERROR
 router.put('/:id', (req, res) => {
   Category.update(req.body, {
     where: {
@@ -53,6 +57,7 @@ router.put('/:id', (req, res) => {
   // update a category by its `id` value
 });
 
+//THIS RETURNS 0
 router.delete('/:id', (req, res) => {
   Category.destroy({
     where: {
