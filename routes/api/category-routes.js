@@ -3,7 +3,7 @@ const { Category, Product } = require('../../models');
 
 // The `/api/categories` endpoint
 
-//THIS RETURNS AN ERROR
+
 router.get('/', (req, res) => {
   Category.findAll({
     include: [Product]
@@ -11,12 +11,12 @@ router.get('/', (req, res) => {
   .then((responce) => {
     res.status(200).json(responce)
   })
-  .catch((err) => res.status(404).json({err: 'an error occured GET'}))
+  .catch((err) => res.status(404).json(err))
   // find all categories
   // be sure to include its associated Products
 });
 
-//THIS RETURNS AN ERROR
+
 router.get('/:id', (req, res) => {
   Category.findOne({
     where: {
@@ -28,22 +28,22 @@ router.get('/:id', (req, res) => {
   .then((responce) => {
     res.status(200).json(responce)
   })
-  .catch((err) => res.status(404).json({err: 'an error occured GET/id'}))
+  .catch((err) => res.status(404).json(err))
   // find one category by its `id` value
   // be sure to include its associated Products
 });
 
-//THIS WORKS
+
 router.post('/', (req, res) => {
   Category.create(req.body)
     .then((responce) => {
       res.status(200).json(responce)
     })
-    .catch((err) => res.status(400).json({err: 'an error occured POST'}))
+    .catch((err) => res.status(400).json(err))
   // create a new category
 });
 
-//THIS RETURNS AN ERROR
+
 router.put('/:id', (req, res) => {
   Category.update(req.body, {
     where: {
@@ -53,11 +53,11 @@ router.put('/:id', (req, res) => {
   .then((responce) => {
     res.status(200).json(responce)
   })
-  .catch(res.status(404).json({err: 'an error occured PUT/id'}))
+  .catch((err) => res.status(400).json(err))
   // update a category by its `id` value
 });
 
-//THIS RETURNS 0
+
 router.delete('/:id', (req, res) => {
   Category.destroy({
     where: {
