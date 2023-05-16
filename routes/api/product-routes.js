@@ -3,8 +3,6 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
 
 // The `/api/products` endpoint
 
-// get all products
-//THIS RETURNS AN ERROR
 router.get('/', (req, res) => {
   Product.findAll({
     include: [
@@ -19,12 +17,9 @@ router.get('/', (req, res) => {
     res.status(200).json(responce)
   })
   .catch((err) => res.status(500).json(err))
-  // find all products
-  // be sure to include its associated Category and Tag data
 });
 
 // get one product
-//THIS RETURNS AN ERROR
 router.get('/:id', (req, res) => {
   Product.findOne({
     where: {
@@ -41,28 +36,11 @@ router.get('/:id', (req, res) => {
     .then((responce) => {
       res.status(200).json(responce)
     })
-    .catch((err) => res.status(500).json({ err: 'an error occured GET/id' }))
-  // find a single product by its `id`
-  // be sure to include its associated Category and Tag data
+    .catch((err) => res.status(500).json(err))
 });
 
 // create new product
 router.post('/', (req, res) => {
-  // Product.create(req.body)
-  // .then((responce) => {
-  //   res.status(200).json(responce)
-  // })
-  // .catch((err) => res.status(500).json({ err: 'an error occured POST'}))
-  /* req.body should look like this...
-    {
-      product_name: "Basketball",
-      price: 200.00,
-      stock: 3,
-      tagIds: [1, 2, 3, 4]
-    }
-  */
-
-
   Product.create(req.body)
     .then((product) => {
       // if there's product tags, we need to create pairings to bulk create in the ProductTag model
@@ -86,7 +64,6 @@ router.post('/', (req, res) => {
 });
 
 // update product
-
 router.put('/:id', (req, res) => {
   // update product data
   Product.update(req.body, {
@@ -128,9 +105,8 @@ router.put('/:id', (req, res) => {
     });
 });
 
-//THIS RETURNS 0
+// delete one product by its `id` value
 router.delete('/:id', (req, res) => {
-  // delete one product by its `id` value
   Product.destroy({
     where: {
       id: req.params.id,
@@ -139,7 +115,7 @@ router.delete('/:id', (req, res) => {
     .then((responce) => {
       res.status(200).json(responce)
     })
-    .catch((err) => res.status(404).json({ err: 'an error occured GET/id' }))
+    .catch((err) => res.status(404).json(err))
 });
 
 module.exports = router;

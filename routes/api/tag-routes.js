@@ -18,8 +18,6 @@ router.get('/', (req, res) => {
     res.status(200).json(responce)
   })
   .catch((err) => res.status(404).json(err))
-  // find all tags
-  // be sure to include its associated Product data
 });
 
 
@@ -39,9 +37,6 @@ router.get('/:id', (req, res) => {
     res.status(200).json(responce)
   })
   .catch((err) => res.status(404).json(err))
-
-  // find a single tag by its `id`
-  // be sure to include its associated Product data
 });
 
 
@@ -50,9 +45,7 @@ router.post('/', (req, res) => {
   .then((responce) => {
     res.status(200).json(responce)
   })
-  .catch((err) => res.status(500).json({err: 'an error occured POST'}))
-
-  // create a new tag
+  .catch((err) => res.status(500).json(err))
 });
 
 router.put('/:id', (req, res) => {
@@ -64,8 +57,7 @@ router.put('/:id', (req, res) => {
   .then((responce) => {
     res.status(200).json(responce)
   })
-  .catch((err) => res.status(500).json({err: 'an error occured POST'}))
-  // update a tag's name by its `id` value
+  .catch((err) => res.status(500).json(err))
 });
 
 
@@ -78,8 +70,7 @@ router.delete('/:id', (req, res) => {
   .then((responce) => {
     res.status(200).json(responce)
   })
-  .catch((err) => res.status(500).json({err: 'an error occured POST'}))
-  // delete on tag by its `id` value
+  .catch((err) => res.status(500).json(err))
 });
 
 module.exports = router;
