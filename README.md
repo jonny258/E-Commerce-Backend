@@ -39,8 +39,8 @@ Once the project is set up and running, you can use Insomnia to interact with th
 ## Walkthrough Video
 Please find the walkthrough video demonstrating the application's functionality and meeting all the acceptance criteria here:
 
-<video controls>
-  <source src="./DEMO_VIDEO.mp4" type="video/mp4">
+<video>
+  <source src="https://drive.google.com/file/d/1KhRtflpfPNiKH-TcLbhac5DChiQiJ548/view" type="video/mp4">
   <!-- Add additional <source> tags for other supported video formats -->
   Your browser does not support the video tag.
 </video>
