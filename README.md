@@ -39,11 +39,15 @@ Once the project is set up and running, you can use Insomnia to interact with th
 ## Walkthrough Video
 Please find the walkthrough video demonstrating the application's functionality and meeting all the acceptance criteria here:
 
-<video>
+https://github.com/jonny258/E-Commerce-Backend/assets/43094720/176a8dc5-eb01-4b5a-9da3-d6224929e5bc
+
+
+
+<!-- <video>
   <source src="https://drive.google.com/file/d/1KhRtflpfPNiKH-TcLbhac5DChiQiJ548/view" type="video/mp4">
   <!-- Add additional <source> tags for other supported video formats -->
   Your browser does not support the video tag.
-</video>
+</video> -->
 
 
 ## License
