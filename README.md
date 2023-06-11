@@ -43,11 +43,10 @@ https://github.com/jonny258/E-Commerce-Backend/assets/43094720/176a8dc5-eb01-4b5
 
 
 
-<!-- <video>
+<video>
   <source src="https://drive.google.com/file/d/1KhRtflpfPNiKH-TcLbhac5DChiQiJ548/view" type="video/mp4">
   <!-- Add additional <source> tags for other supported video formats -->
-  Your browser does not support the video tag.
-</video> -->
+</video> 
 
 
 ## License
